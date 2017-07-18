@@ -8,3 +8,5 @@ Homestead.json
 Homestead.yaml
 #.env
 /cgi-bin
+/nbproject/private/
+/nbproject

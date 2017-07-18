@@ -179,7 +179,10 @@ return [
 
         //Third
         Barryvdh\Debugbar\ServiceProvider::class,
-
+        Zizaco\Entrust\EntrustServiceProvider::class,
+        Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider::class,
+        Themsaid\Langman\LangmanServiceProvider::class,
+        Jenssegers\Mongodb\MongodbServiceProvider::class,
     ],
 
     /*
@@ -230,6 +233,9 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
+        'LaravelLocalization'	=> Mcamara\LaravelLocalization\Facades\LaravelLocalization::class,
+        'Moloquent' => Jenssegers\Mongodb\Eloquent\Model::class,
     ],
 
 ];
