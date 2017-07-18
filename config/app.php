@@ -183,6 +183,8 @@ return [
         Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider::class,
         Themsaid\Langman\LangmanServiceProvider::class,
         Jenssegers\Mongodb\MongodbServiceProvider::class,
+        Elasticquent\ElasticquentServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
     ],
 
     /*
@@ -236,6 +238,9 @@ return [
         'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
         'LaravelLocalization'	=> Mcamara\LaravelLocalization\Facades\LaravelLocalization::class,
         'Moloquent' => Jenssegers\Mongodb\Eloquent\Model::class,
+        'Es' => Elasticquent\ElasticquentElasticsearchFacade::class,
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
     ],
 
 ];

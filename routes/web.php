@@ -4,12 +4,12 @@ Route::get('/', function () {
     //set config
     //config(['app.timezone' => 'America/Chicago']);
     //echo config('app.timezone'); //get config
-    
+
     Debugbar::info('info - thanhnm');
     Debugbar::error('Test Debugbar error message');
     Debugbar::warning('Test Debugbar warning message');
     Debugbar::addMessage('Another message', 'mylabel');
-    
+
     //Do thoi gian thuc thi lenh
     Debugbar::addMeasure('Thoi gian thuc thi:', LARAVEL_START, microtime(true));
 
@@ -26,6 +26,8 @@ Route::get('foo', function () {
 
 Route::get('dd', 'WelcomeController@ddFunction');
 Route::get('log', 'WelcomeController@index');
+Route::get('collection', 'WelcomeController@collect');
+Route::get('exp', 'WelcomeController@exception');
 
 //any Verb: get|post|delete|put|patch|options
 Route::any('bar', function () {
@@ -96,3 +98,30 @@ Route::group(
 });
 
 Route::get('/home', 'HomeController@index');
+
+#select box jquery
+Route::get('/form', 'CountryController@showForm');
+Route::post('/showCitiesInCountry', 'CityController@showCitiesInCountry');
+
+#ElasticSearch
+Route::get('ItemSearch', 'ItemSearchController@index');
+Route::post('ItemSearchCreate', 'ItemSearchController@create');
+
+# fluent routing
+//dat ten cho router
+Route::name('profileX')->get('user/{id}/profile', function ($id) {
+    return 'routng';
+});
+
+//dang ky route name va middleware
+// Route::name('users.index')->middleware('auth')->get('users', function () {
+//
+// });
+
+// Đăng ký middleware với route prefix và group
+// Route::middleware('auth')->prefix('api')->group(function () {
+//
+// });
+//
+// Đăng ký middleware với resource controller
+// Route::middleware('auth')->resource('photo', 'PhotoController');
